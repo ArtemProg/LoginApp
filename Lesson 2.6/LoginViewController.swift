@@ -27,10 +27,6 @@ final class LoginViewController: UIViewController {
     @IBOutlet var passwordTextField: UITextField!
     
     private var username: String? // ограничимся только именем
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
 
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         guard let username = userNameTextField.text else { return false }
