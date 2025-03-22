@@ -14,10 +14,10 @@ struct UserBD {
 }
 
 let users = [
-    UserBD(name: "User", password: "password"),
-    UserBD(name: "Admin", password: "Pa$$w0rd"),
+    UserBD(name: "User", password: "Password"),
     UserBD(name: "Anna", password: "123"),
     UserBD(name: "Alex", password: "qwerty"),
+    UserBD(name: "Admin", password: "Pa$$w0rd"),
 ]
 
 
@@ -60,10 +60,23 @@ final class LoginViewController: UIViewController {
         }
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        self.view.endEditing(true)
+    }
+    
     @IBAction func unwind(for segue: UIStoryboardSegue) {
         userNameTextField.text = ""
         passwordTextField.text = ""
         username = nil
+    }
+    
+    @IBAction func showHint(sender: UIButton) {
+        let message = users.map {
+            sender.tag == 11 ? "\($0.name): \($0.password)" : $0.name
+        }.joined(separator: "\n")
+        
+        showAllert(withTitle: "Secret data", andMessage: message)
     }
 
     private func isValidLogin(username: String, password: String) -> Bool {
