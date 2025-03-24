@@ -15,6 +15,10 @@ final class LoginViewController: UIViewController {
     
     private var user: User?
 
+    override func viewDidLoad() {
+        fillInLoginPassword()
+    }
+    
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         guard let username = userNameTextField.text else { return false }
         guard let password = passwordTextField.text else { return false }
@@ -77,6 +81,12 @@ final class LoginViewController: UIViewController {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(action)
         present(alert, animated: true)
+    }
+    
+    private func fillInLoginPassword() {
+        let user = BD.getUsers().randomElement()
+        userNameTextField.text = user?.username
+        passwordTextField.text = user?.password
     }
 }
 
