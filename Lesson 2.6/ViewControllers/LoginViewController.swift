@@ -24,13 +24,11 @@ final class LoginViewController: UIViewController {
         guard let password = passwordTextField.text else { return false }
         
         guard let user = getUser(username: username, password: password) else {
-            
             showAllert(
                 withTitle: "Invalid login or password",
                 andMessage: "Please, enter correct login or password") {
                     self.passwordTextField.text = ""
             }
-            
             return false
         }
         
@@ -40,9 +38,16 @@ final class LoginViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if let welcomeVC = segue.destination as? WelcomeViewController {
-            welcomeVC.user = user
+        if let tabBarVC = segue.destination as? UITabBarController {
+            tabBarVC.viewControllers?.forEach { viewController in
+                if let welcomeVC = viewController as? WelcomeViewController {
+                    welcomeVC.user = user
+                } else if let navigationVC = viewController as? UINavigationController {
+                    if let personVC = navigationVC.topViewController as? PersonViewController {
+                        personVC.user = user
+                    }
+                }
+            }
         }
     }
     
