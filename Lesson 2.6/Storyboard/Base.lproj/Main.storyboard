@@ -141,7 +141,7 @@ My name is [Person]</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oap-MO-7oY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="eBd-aG-E8p" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="816" y="805"/>
+            <point key="canvasLocation" x="815" y="833"/>
         </scene>
         <!--[Person]-->
         <scene sceneID="eXz-zS-lNM">
@@ -181,12 +181,13 @@ My name is [Person]</string>
             </objects>
             <point key="canvasLocation" x="3327" y="833"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="oOl-Jf-ozi">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="XXP-pN-bkJ" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="XXP-pN-bkJ" customClass="TabBarViewController" customModule="Lesson_2_6" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vkR-6q-HpM">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>

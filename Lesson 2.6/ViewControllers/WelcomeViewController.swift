@@ -15,11 +15,7 @@ final class WelcomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        welomeLabel.text = """
-Welcome, \(user.username)!
-My name is \(user.person.firstName) \(user.person.lastName)
-"""
+        welomeLabel.text = "Welcome, \(user.username)!\nMy name is \(user.person.fullName)"
     }
 
 }

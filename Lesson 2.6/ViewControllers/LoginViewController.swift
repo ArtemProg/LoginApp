@@ -13,6 +13,8 @@ final class LoginViewController: UIViewController {
     @IBOutlet var userNameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     
+    //Т.к. у нас есть логин и пароль логично иметь несколько пользователей для входа
+    private let repo: UserRepository = MockDatabase()
     private var user: User?
 
     override func viewDidLoad() {
@@ -38,16 +40,8 @@ final class LoginViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let tabBarVC = segue.destination as? UITabBarController {
-            tabBarVC.viewControllers?.forEach { viewController in
-                if let welcomeVC = viewController as? WelcomeViewController {
-                    welcomeVC.user = user
-                } else if let navigationVC = viewController as? UINavigationController {
-                    if let personVC = navigationVC.topViewController as? PersonViewController {
-                        personVC.user = user
-                    }
-                }
-            }
+        if let tabBarVC = segue.destination as? TabBarViewController {
+            tabBarVC.user = user
         }
     }
     
@@ -63,7 +57,7 @@ final class LoginViewController: UIViewController {
     }
     
     @IBAction func showHint(sender: UIButton) {
-        let message = BD.getUsers().map {
+        let message = repo.allUsers.map {
             sender.tag == 11 ? "\($0.username): \($0.password)" : $0.username
         }.joined(separator: "\n")
         
@@ -73,7 +67,7 @@ final class LoginViewController: UIViewController {
     private func getUser(username: String, password: String) -> User? {
         guard !(username.isEmpty && password.isEmpty) else { return nil }
         
-        guard let user = BD.getUsers().first(where: { $0.username == username }),
+        guard let user = repo.allUsers.first(where: { $0.username == username }),
               user.password == password else { return nil }
         
         return user
@@ -89,7 +83,7 @@ final class LoginViewController: UIViewController {
     }
     
     private func fillInLoginPassword() {
-        let user = BD.getUsers().randomElement()
+        let user = repo.allUsers.randomElement()
         userNameTextField.text = user?.username
         passwordTextField.text = user?.password
     }
