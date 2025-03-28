@@ -7,26 +7,26 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		AC7623002D8DF76D00FDB8A4 /* Lesson 2.6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lesson 2.6.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC7623002D8DF76D00FDB8A4 /* LoginApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		AC7623122D8DF76D00FDB8A4 /* Exceptions for "Lesson 2.6" folder in "Lesson 2.6" target */ = {
+		AC7623122D8DF76D00FDB8A4 /* Exceptions for "LoginApp" folder in "LoginApp" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				App/Info.plist,
 			);
-			target = AC7622FF2D8DF76D00FDB8A4 /* Lesson 2.6 */;
+			target = AC7622FF2D8DF76D00FDB8A4 /* LoginApp */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		AC7623022D8DF76D00FDB8A4 /* Lesson 2.6 */ = {
+		AC7623022D8DF76D00FDB8A4 /* LoginApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				AC7623122D8DF76D00FDB8A4 /* Exceptions for "Lesson 2.6" folder in "Lesson 2.6" target */,
+				AC7623122D8DF76D00FDB8A4 /* Exceptions for "LoginApp" folder in "LoginApp" target */,
 			);
-			path = "Lesson 2.6";
+			path = LoginApp;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -45,7 +45,7 @@
 		AC7622F72D8DF76D00FDB8A4 = {
 			isa = PBXGroup;
 			children = (
-				AC7623022D8DF76D00FDB8A4 /* Lesson 2.6 */,
+				AC7623022D8DF76D00FDB8A4 /* LoginApp */,
 				AC7623012D8DF76D00FDB8A4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -53,7 +53,7 @@
 		AC7623012D8DF76D00FDB8A4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AC7623002D8DF76D00FDB8A4 /* Lesson 2.6.app */,
+				AC7623002D8DF76D00FDB8A4 /* LoginApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -61,9 +61,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AC7622FF2D8DF76D00FDB8A4 /* Lesson 2.6 */ = {
+		AC7622FF2D8DF76D00FDB8A4 /* LoginApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AC7623132D8DF76D00FDB8A4 /* Build configuration list for PBXNativeTarget "Lesson 2.6" */;
+			buildConfigurationList = AC7623132D8DF76D00FDB8A4 /* Build configuration list for PBXNativeTarget "LoginApp" */;
 			buildPhases = (
 				AC7622FC2D8DF76D00FDB8A4 /* Sources */,
 				AC7622FD2D8DF76D00FDB8A4 /* Frameworks */,
@@ -74,13 +74,13 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				AC7623022D8DF76D00FDB8A4 /* Lesson 2.6 */,
+				AC7623022D8DF76D00FDB8A4 /* LoginApp */,
 			);
-			name = "Lesson 2.6";
+			name = LoginApp;
 			packageProductDependencies = (
 			);
 			productName = "Lesson 2.6";
-			productReference = AC7623002D8DF76D00FDB8A4 /* Lesson 2.6.app */;
+			productReference = AC7623002D8DF76D00FDB8A4 /* LoginApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -98,7 +98,7 @@
 					};
 				};
 			};
-			buildConfigurationList = AC7622FB2D8DF76D00FDB8A4 /* Build configuration list for PBXProject "Lesson 2.6" */;
+			buildConfigurationList = AC7622FB2D8DF76D00FDB8A4 /* Build configuration list for PBXProject "LoginApp" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -112,7 +112,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AC7622FF2D8DF76D00FDB8A4 /* Lesson 2.6 */,
+				AC7622FF2D8DF76D00FDB8A4 /* LoginApp */,
 			);
 		};
 /* End PBXProject section */
@@ -146,7 +146,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Lesson 2.6/App/Info.plist";
+				INFOPLIST_FILE = LoginApp/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -178,7 +178,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Lesson 2.6/App/Info.plist";
+				INFOPLIST_FILE = LoginApp/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -324,7 +324,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AC7622FB2D8DF76D00FDB8A4 /* Build configuration list for PBXProject "Lesson 2.6" */ = {
+		AC7622FB2D8DF76D00FDB8A4 /* Build configuration list for PBXProject "LoginApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AC7623162D8DF76D00FDB8A4 /* Debug */,
@@ -333,7 +333,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AC7623132D8DF76D00FDB8A4 /* Build configuration list for PBXNativeTarget "Lesson 2.6" */ = {
+		AC7623132D8DF76D00FDB8A4 /* Build configuration list for PBXNativeTarget "LoginApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AC7623142D8DF76D00FDB8A4 /* Debug */,
