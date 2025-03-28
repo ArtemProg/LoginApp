@@ -7,46 +7,40 @@
 
 import UIKit
 
-final class PersonViewController: UIViewController {
+final class UserInfoViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var firstNameLabel: UILabel!
     @IBOutlet weak var lastNameLabel: UILabel!
-    @IBOutlet weak var companyLabel: UILabel!
+    @IBOutlet weak var jobLabel: UILabel!
     @IBOutlet weak var departmentLabel: UILabel!
-    @IBOutlet weak var positionLabel: UILabel!
-    @IBOutlet weak var ageLabel: UILabel!
+    @IBOutlet weak var jobTitleLabel: UILabel!
     
     var user: User!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         title = user.person.fullName
-        navigationItem.backButtonTitle = user.person.fullName
-        
         imageView.backgroundColor = .systemGray6
-        
         fillPersonInfo()
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
         imageView.layer.cornerRadius = imageView.frame.width / 2
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let bioVC = segue.destination as? PersonBioViewController {
-            bioVC.user = user
+        guard let userBioVC = segue.destination as? UserBioViewController else { return }
+        userBioVC.user = user
             
             // У меня ни как не получалось одновременно выводить корректное отображение
             // кнопки Back и заголовка на экране с биографией.
             // Корректно ли так делать?
-            let backItem = UIBarButtonItem()
-            backItem.title = user.person.fullName
-            navigationItem.backBarButtonItem = backItem
-        }
+//            let backItem = UIBarButtonItem()
+//            backItem.title = user.person.fullName
+//            navigationItem.backBarButtonItem = backItem
+        
     }
     
     private func fillPersonInfo() {
@@ -55,11 +49,10 @@ final class PersonViewController: UIViewController {
         
         firstNameLabel.text = person.firstName
         lastNameLabel.text = person.lastName
-        companyLabel.text = person.company
-        departmentLabel.text = person.department
-        positionLabel.text = person.position
-        ageLabel.text = person.age.formatted()
+        jobLabel.text = person.job.title
+        departmentLabel.text = person.job.department.rawValue
+        jobTitleLabel.text = person.job.jobTitle.rawValue
         
-        imageView.image = UIImage(named: user.username) ?? UIImage(systemName: "person.fill")
+        imageView.image = UIImage(named: user.person.photo) ?? UIImage(systemName: "person.fill")
     }
 }

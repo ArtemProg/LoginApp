@@ -12,7 +12,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="Lesson_2_6" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="LoginApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" restorationIdentifier="ForgotPassword" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -87,7 +87,7 @@
         <!--Home-->
         <scene sceneID="HQ8-lZ-HKK">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="2pK-C0-BYy" customClass="WelcomeViewController" customModule="Lesson_2_6" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="2pK-C0-BYy" customClass="WelcomeViewController" customModule="LoginApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="J5U-lb-8OZ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -146,7 +146,7 @@ My name is [Person]</string>
         <!--[Person]-->
         <scene sceneID="eXz-zS-lNM">
             <objects>
-                <viewController id="J5g-zb-7Yf" customClass="PersonViewController" customModule="Lesson_2_6" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="J5g-zb-7Yf" customClass="UserInfoViewController" customModule="LoginApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9r9-vc-YQ9">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -158,7 +158,7 @@ My name is [Person]</string>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="lTF-ok-Xx6">
-                                <rect key="frame" x="16" y="292.5" width="288" height="173"/>
+                                <rect key="frame" x="16" y="292.5" width="288" height="142.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rnl-yA-ewH">
                                         <rect key="frame" x="0.0" y="0.0" width="142.5" height="20.5"/>
@@ -245,23 +245,6 @@ My name is [Person]</string>
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="t9E-oW-a2i">
-                                        <rect key="frame" x="0.0" y="152.5" width="122" height="20.5"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Возраст:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xAW-mw-N7G">
-                                                <rect key="frame" x="0.0" y="0.0" width="70" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Age]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m4z-W6-b0w">
-                                                <rect key="frame" x="80" y="0.0" width="42" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -285,13 +268,12 @@ My name is [Person]</string>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="CompanyLabel" destination="X8l-wB-zxy" id="ipd-s6-8sz"/>
-                        <outlet property="ageLabel" destination="m4z-W6-b0w" id="PDc-I2-9RT"/>
                         <outlet property="departmentLabel" destination="CfR-5N-E5l" id="2hc-rr-yMJ"/>
                         <outlet property="firstNameLabel" destination="jxE-Z0-2aP" id="G0j-AC-m4y"/>
                         <outlet property="imageView" destination="4ge-OO-phF" id="Gii-fV-vuj"/>
+                        <outlet property="jobLabel" destination="X8l-wB-zxy" id="wXb-mt-CfM"/>
+                        <outlet property="jobTitleLabel" destination="1L4-Nx-dyV" id="Slg-Sv-nZJ"/>
                         <outlet property="lastNameLabel" destination="npS-3S-rdU" id="8KI-OT-An8"/>
-                        <outlet property="positionLabel" destination="1L4-Nx-dyV" id="Slg-Sv-nZJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5f7-WL-i8p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -301,7 +283,7 @@ My name is [Person]</string>
         <!--[Person] Bio-->
         <scene sceneID="Tho-ML-WNb">
             <objects>
-                <viewController id="xVC-vb-yd1" customClass="PersonBioViewController" customModule="Lesson_2_6" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="xVC-vb-yd1" customClass="UserBioViewController" customModule="LoginApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bdd-KW-f2G">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -336,7 +318,7 @@ My name is [Person]</string>
         <!--Tab Bar View Controller-->
         <scene sceneID="oOl-Jf-ozi">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="XXP-pN-bkJ" customClass="TabBarViewController" customModule="Lesson_2_6" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="XXP-pN-bkJ" customClass="TabBarViewController" customModule="LoginApp" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vkR-6q-HpM">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -387,7 +369,7 @@ My name is [Person]</string>
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray5Color">
-            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

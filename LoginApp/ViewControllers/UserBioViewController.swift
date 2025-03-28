@@ -12,7 +12,7 @@
 
 import UIKit
 
-final class PersonBioViewController: UIViewController {
+final class UserBioViewController: UIViewController {
 
     @IBOutlet weak var bioTextView: UITextView!
     var user: User!

@@ -14,26 +14,26 @@ final class TabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Я все таки не понимаю где и как правильно менять заголовки
-        // для UINavigationController и UITabBarController
-        // Особенно если у нас большая иерархия из вьюконтроллеров
+        let tabBarAppearance = UITabBarAppearance()
+        tabBarAppearance.configureWithOpaqueBackground()
+        tabBar.standardAppearance = tabBarAppearance
+        tabBar.scrollEdgeAppearance = tabBarAppearance
         
-        viewControllers?.forEach { viewController in
-            if let welcomeVC = viewController as? WelcomeViewController {
+        tabBar.items?.last?.title = user.person.fullName
+        
+        viewControllers?.forEach {
+            if let welcomeVC = $0 as? WelcomeViewController {
                 welcomeVC.user = user
-            } else if let navigationVC = viewController as? UINavigationController {
-                if let personVC = navigationVC.topViewController as? PersonViewController {
-                    personVC.user = user
-                    personVC.title = user.person.fullName
+            } else if let navigationVC = $0 as? UINavigationController {
+                let userInfoVC = navigationVC.topViewController
+                guard let userInfoVC = userInfoVC as? UserInfoViewController else {
+                    return
                 }
+                userInfoVC.user = user
             }
         }
         
-        let tabBarAppearance = UITabBarAppearance()
-        tabBarAppearance.configureWithOpaqueBackground()
         
-        tabBar.standardAppearance = tabBarAppearance
-        tabBar.scrollEdgeAppearance = tabBarAppearance
         
     }
 
